@@ -1,0 +1,30 @@
+{
+  "name": "authentication-api",
+  "version": "1.0.0",
+  "description": "REST API for secure user authentication and account management",
+  "keywords": [
+    "authentication",
+    "api",
+    "nodejs",
+    "security",
+    "postgresql"
+  ],
+  "homepage": "https://github.com/IgorOrlando/Authentication-API#readme",
+  "bugs": {
+    "url": "https://github.com/IgorOrlando/Authentication-API/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IgorOrlando/Authentication-API.git"
+  },
+  "license": "ISC",
+  "engines": {
+    "node": ">=20"
+  },
+  "author": "IgorOrlando",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
