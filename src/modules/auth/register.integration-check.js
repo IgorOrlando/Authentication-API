@@ -16,7 +16,7 @@ const email = `test-${randomUUID()}@example.com`;
 let user;
 
 try {
-	user = await registerUser({
+	user = await registerUser(pool, {
 		name: 'Igor Orlando',
 		email,
 		phone: '+393331234567',

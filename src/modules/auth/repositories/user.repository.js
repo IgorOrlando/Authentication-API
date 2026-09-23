@@ -1,7 +1,5 @@
-import { pool } from '../../../database/pool.js';
-
-export async function createUser({ id, name, email, phone, passwordHash }) {
-	const result = await pool.query(
+export async function createUser(client, { id, name, email, phone, passwordHash }) {
+	const result = await client.query(
 		`
 		INSERT INTO users (id, name, email, phone, password_hash)
 		VALUES ($1, $2, $3, $4, $5)

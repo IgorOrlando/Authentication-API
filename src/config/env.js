@@ -24,6 +24,7 @@ const dbPortValue = process.env.DB_PORT;
 const dbName = process.env.DB_NAME;
 const dbUser = process.env.DB_USER;
 const dbPassword = process.env.DB_PASSWORD;
+const phoneCodeSecret = process.env.PHONE_CODE_SECRET;
 
 if (!dbHost?.trim() || !dbPortValue?.trim() || !dbName?.trim() || !dbUser?.trim() || !dbPassword) {
 	throw new Error('Database configuration is incomplete');
@@ -35,9 +36,14 @@ if (!Number.isInteger(dbPort) || dbPort <= 0 || dbPort > 65535) {
 	throw new Error('DB_Port must be a valid TCP port');
 }
 
+if (!/^[a-fA-F0-9]{64}$/.test(phoneCodeSecret ?? '')) {
+	throw new Error('PHONE_CODE_SECRET must be a 32-byte hexadecimal key');
+}
+
 export const env = {
 	port,
 	nodeEnv,
+	phoneCodeSecret,
 	db: {
 		host: dbHost,
 		port: dbPort,
