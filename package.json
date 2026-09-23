@@ -29,7 +29,8 @@
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "migrate": "node src/database/migrate.js"
+    "migrate": "node src/database/migrate.js",
+    "test": "node --test"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
@@ -38,8 +39,11 @@
     "prettier": "^3.9.7"
   },
   "dependencies": {
+    "argon2": "^0.45.1",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
-    "pg": "^8.23.0"
+    "libphonenumber-js": "^1.13.13",
+    "pg": "^8.23.0",
+    "zod": "^4.6.5"
   }
 }
